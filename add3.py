@@ -5,9 +5,9 @@ from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 20629030
-API_HASH = '852b9b2c7700e4c7d90e5ba6ef4f47d5'
-PHONE = +2347082484222
+API_ID = 20834141
+API_HASH = '867902c3c604c0dc88b596c3a7540773'
+PHONE = +2347083639401
 # Function to add members to a group
 def add_members_to_group(group_username):
     # Initialize the client
@@ -30,7 +30,7 @@ def add_members_to_group(group_username):
                     print(f"Successfully added {username}.")
                     
                     # Random delay to avoid flood errors
-                    delay = randint(60, 80)  # Random delay between 5 to 10 seconds
+                    delay = randint(30, 60)  # Random delay between 5 to 10 seconds
                     print(f"Waiting for {delay} seconds...")
                     time.sleep(delay)
 
