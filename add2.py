@@ -1,68 +1,46 @@
 import csv
 import time
+from random import randint
 from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest
-from telethon.tl.types import InputPeerUser
 
-# Replace with your API details
-API_ID = 24889411
-API_HASH = 'dad586a448570799c8e03da26af6f555'
-PHONE_NUMBER = +2349051322351
-
-# Target group username or ID
-TARGET_GROUP = 'BitclubsCommunity'
-
-# Path to the CSV file containing scraped members
-CSV_FILE = 'scraped_members.csv'
-
-# Initialize the Telegram client
-client = TelegramClient('session_name', API_ID, API_HASH)
-
-async def add_members():
-    await client.start(phone=PHONE_NUMBER)
-
-    # Get the target group entity
-    group = await client.get_entity(TARGET_GROUP)
-
-    # Read members from the CSV file
-    with open(CSV_FILE, 'r', encoding='utf-8') as file:
-        csv_reader = csv.DictReader(file)
-        members = list(csv_reader)
-
-    count = 0
-    for member in members:
+# Replace these with your actual API credentials
+API_ID = 22882800
+API_HASH = '646972854ad08fb2fb6411552dd02d41'
+PHONE = +2347085318218
+# Function to add members to a group
+def add_members_to_group(group_username):
+    # Initialize the client
+    with TelegramClient('new_session_name', API_ID, API_HASH) as client:
         try:
-            user_id = int(member['user id'])
-            access_hash = int(member.get('access hash', 0))  # Some users might not have access hash
+            # Get the target group entity
+            target_group = client.get_entity(group_username)
 
-            if access_hash:
-                user_to_add = InputPeerUser(user_id, access_hash)
+            # Read members from the CSV file
+            with open('members.csv', 'r', encoding='utf-8') as file:
+                csv_reader = csv.DictReader(file)
+                usernames = [row['username'] for row in csv_reader if row['username']]
 
-                # Add the user to the group
-                await client(InviteToChannelRequest(group, [user_to_add]))
-                print(f"Added {member['username']} (ID: {user_id}) to the group.")
+            # Adding members to the group
+            for username in usernames:
+                try:
+                    print(f"Adding {username} to the group...")
+                    user = client.get_entity(username)
+                    client(InviteToChannelRequest(target_group, [user]))
+                    print(f"Successfully added {username}.")
+                    
+                    # Random delay to avoid flood errors
+                    delay = randint(30, 60)  # Random delay between 5 to 10 seconds
+                    print(f"Waiting for {delay} seconds...")
+                    time.sleep(delay)
 
-                count += 1
-                if count >= 200:  # Stop after adding 200 users
-                    print("Reached the limit of 200 users.")
-                    break
+                except Exception as e:
+                    print(f"Failed to add {username}: {e}")
 
-                # Delay to avoid hitting Telegram's rate limits
-                time.sleep(5)  # Adjust this delay based on actual usage and limits
-            else:
-                print(f"Skipping {member['username']} due to missing access hash.")
+        except Exception as main_error:
+            print(f"An error occurred: {main_error}")
 
-        except Exception as e:
-            print(f"Failed to add {member['username']} (ID: {user_id}): {e}")
-            # Handle flood wait error
-            if 'FloodWaitError' in str(e):
-                wait_time = int(str(e).split(' ')[-1])  # Extract wait time
-                print(f"Flood wait triggered. Waiting for {wait_time} seconds...")
-                time.sleep(wait_time)
-
-    await client.disconnect()
-
-# Run the script
-if __name__ == '__main__':
-    import asyncio
-    asyncio.run(add_members())
+# Example usage
+if __name__ == "__main__":
+    group_username = "BitclubsChannell"  # Replace with the target group's username
+    add_members_to_group(group_username)
