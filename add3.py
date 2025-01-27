@@ -5,9 +5,9 @@ from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 26439312
-API_HASH = '66dad0ce553094675ec64d87de13ddd8'
-PHONE = +2349165020644
+API_ID = 23941921
+API_HASH = '6346ecdfde8c94db1ea3d53898b17364'
+PHONE = +2348067290703
 # Function to add members to a group
 def add_members_to_group(group_username):
     # Initialize the client
