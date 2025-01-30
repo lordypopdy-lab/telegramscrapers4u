@@ -5,19 +5,19 @@ from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 21956695
-API_HASH = '299d9f260fcd28963bc4d0bab7ad6351'
-PHONE = +2349020234290
+API_ID = 23922545
+API_HASH = 'b2f7872e38103bd5af3f2221b3ab9ea5'
+PHONE = +2349028722282
 # Function to add members to a group
 def add_members_to_group(group_username):
     # Initialize the client
-    with TelegramClient('new_session_name1', API_ID, API_HASH) as client:
+    with TelegramClient('new_session_1', API_ID, API_HASH) as client:
         try:
             # Get the target group entity
             target_group = client.get_entity(group_username)
 
             # Read members from the CSV file
-            with open('members.csv', 'r', encoding='utf-8') as file:
+            with open('members1.csv', 'r', encoding='utf-8') as file:
                 csv_reader = csv.DictReader(file)
                 usernames = [row['username'] for row in csv_reader if row['username']]
 
@@ -42,5 +42,5 @@ def add_members_to_group(group_username):
 
 # Example usage
 if __name__ == "__main__":
-    group_username = "BitclubsChannell"  # Replace with the target group's username
+    group_username = "BitclubsGroupChat"  # Replace with the target group's username
     add_members_to_group(group_username)

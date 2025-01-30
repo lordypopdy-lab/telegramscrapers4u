@@ -1,59 +1,46 @@
 import csv
+import time
+from random import randint
 from telethon.sync import TelegramClient
-from telethon.tl.functions.channels import GetParticipantsRequest
-from telethon.tl.types import ChannelParticipantsSearch
+from telethon.tl.functions.channels import InviteToChannelRequest
 
-# Replace with your API details
-API_ID = 23961419
-API_HASH = 'e0946bec453fad0d57b30d55dbcadc96'
-PHONE_NUMBER = +2348038239730
+# Replace these with your actual API credentials
+API_ID = 22882800
+API_HASH = '646972854ad08fb2fb6411552dd02d41'
+PHONE = +2347085318218
+# Function to add members to a group
+def add_members_to_group(group_username):
+    # Initialize the client
+    with TelegramClient('new_session_4', API_ID, API_HASH) as client:
+        try:
+            # Get the target group entity
+            target_group = client.get_entity(group_username)
 
-# Target group username or ID
-TARGET_GROUP = 'apeandpepe'
+            # Read members from the CSV file
+            with open('members4.csv', 'r', encoding='utf-8') as file:
+                csv_reader = csv.DictReader(file)
+                usernames = [row['username'] for row in csv_reader if row['username']]
 
-# Output CSV file
-CSV_FILE = 'scraped_members.csv'
+            # Adding members to the group
+            for username in usernames:
+                try:
+                    print(f"Adding {username} to the group...")
+                    user = client.get_entity(username)
+                    client(InviteToChannelRequest(target_group, [user]))
+                    print(f"Successfully added {username}.")
+                    
+                    # Random delay to avoid flood errors
+                    delay = randint(30, 40)  # Random delay between 5 to 10 seconds
+                    print(f"Waiting for {delay} seconds...")
+                    time.sleep(delay)
 
-# Initialize the Telegram client
-client = TelegramClient('session_name', API_ID, API_HASH)
+                except Exception as e:
+                    print(f"Failed to add {username}: {e}")
 
-async def scrape_members():
-    await client.start(phone=PHONE_NUMBER)
+        except Exception as main_error:
+            print(f"An error occurred: {main_error}")
 
-    # Get the target group entity
-    group = await client.get_entity(TARGET_GROUP)
-
-    # Fetch group participants
-    participants = await client(GetParticipantsRequest(
-        channel=group,
-        filter=ChannelParticipantsSearch(''),
-        offset=0,
-        limit=10000,
-        hash=0  # Default value for hash
-    ))
-
-    # Open CSV file for writing
-    with open(CSV_FILE, 'w', newline='', encoding='utf-8') as file:
-        writer = csv.writer(file)
-        # Write the header
-        writer.writerow(['sr. no.', 'username', 'user id', 'name', 'status'])
-
-        for index, participant in enumerate(participants.users, start=1):
-            username = participant.username or ''
-            user_id = participant.id
-            access_hash = participant.access_hash or ''
-            name = f"{participant.first_name or ''} {participant.last_name or ''}".strip()
-            status = 'Active' if participant.status else 'Inactive'
-
-            # Write participant details to CSV
-            writer.writerow([index, username, user_id, name, status])
-
-            print(f"Scraped: {username} (ID: {user_id})")
-
-    print(f"Scraping complete. Data saved to {CSV_FILE}")
-    await client.disconnect()
-
-# Run the script
-if __name__ == '__main__':
-    import asyncio
-    asyncio.run(scrape_members())
+# Example usage
+if __name__ == "__main__":
+    group_username = "BitclubsGroupChat"  # Replace with the target group's username
+    add_members_to_group(group_username)
