@@ -7,7 +7,7 @@ from telethon.tl.functions.channels import InviteToChannelRequest
 # Replace these with your actual API credentials
 API_ID = 20629030
 API_HASH = '852b9b2c7700e4c7d90e5ba6ef4f47d5'
-PHONE = +2347082484222
+PHONE = "+2347082484222"
 # Function to add members to a group
 def add_members_to_group(group_username):
     # Initialize the client
@@ -30,7 +30,7 @@ def add_members_to_group(group_username):
                     print(f"Successfully added {username}.")
                     
                     # Random delay to avoid flood errors
-                    delay = randint(30, 60)  # Random delay between 5 to 10 seconds
+                    delay = randint(20, 30)  # Random delay between 5 to 10 seconds
                     print(f"Waiting for {delay} seconds...")
                     time.sleep(delay)
 
@@ -42,5 +42,5 @@ def add_members_to_group(group_username):
 
 # Example usage
 if __name__ == "__main__":
-    group_username = "BitclubsGroupChat"  # Replace with the target group's username
+    group_username = "@BitclubsChannell"  # Replace with the target group's username
     add_members_to_group(group_username)

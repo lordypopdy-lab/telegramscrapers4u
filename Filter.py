@@ -30,7 +30,7 @@ SLEEP_TIME_2 = 3
 #Subscribe for more Free Telegram Script
 def filterall():
     def main():
-        with open('members0.csv', 'r', encoding='UTF-8') as readFile:
+        with open('membersNew.csv', 'r', encoding='UTF-8') as readFile:
 
             reader = csv.reader(readFile)
 
@@ -56,7 +56,7 @@ def filterall():
 
         writer.writerows(lines)
 
-    myfile = "members0.csv"
+    myfile = "membersNew.csv"
 #Coded with Solved4You 
 #Subscribe for more Free Telegram Script
     ## If file exists, delete it ##
@@ -68,7 +68,7 @@ def filterall():
     with open("Final.csv", "r", encoding='UTF-8') as source:
         rdr = csv.reader(source)
 
-        with open("members0.csv", "w", encoding='UTF-8') as f:
+        with open("membersNew.csv", "w", encoding='UTF-8') as f:
             writer = csv.writer(f, delimiter=",", lineterminator="\n")
             writer.writerow(['sr. no.', 'username', 'user id', 'name', 'Status'])
             i = 0
@@ -88,7 +88,7 @@ def filterall():
         os.remove(myfile)
     else:  ## Show an error ##
         print("Error: %s file not found" % myfile)
-    print("Successfully Filtered And Saved In members0.csv")
+    print("Successfully Filtered And Saved In membersNew.csv")
     input('Please ENTER to exit..')
 
 filterall()

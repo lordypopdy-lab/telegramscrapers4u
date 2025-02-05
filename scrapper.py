@@ -27,12 +27,12 @@ print('Fetching Members...')
 all_participants = []
 
 #enter target group or channel
-target = 'https://t.me/akedoglobal'
+target = 'https://t.me/cursosja'
 #this code is arranged by Solved4You 2.0
 all_participants = client.get_participants(target, aggressive=True)
 #this code is arranged by Solved4You 2.0
 print('Saving In file...')
-with open("members0.csv","w",encoding='UTF-8') as f:
+with open("membersNew.csv","w",encoding='UTF-8') as f:
     writer = csv.writer(f, delimiter=",", lineterminator="\n")
     writer.writerow(['sr. no.','username', 'user id', 'name', 'group', 'group id'])
     i = 0
