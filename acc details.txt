@@ -56,6 +56,33 @@ d122ec7a5cf39942e27c4adcb5b6b192
 20487054
 e8e477e62ca33fdd5deca3de5e8b33bc
 
+//Today
+
++2347013293108
+29946177
+0000ed64d3e0dd9fa2036ea48b05b4db
+
++2347034708316
+27963888
+07afa4a5931b373f87c28483c320e822
+
++2347082082218
+27784011
+b8929d1941d3dd8217e64e310bacdcb0
+
++2348020524205
+25990443
+049cc09061b66b822e41a8dabfeba91c
+
++2349137613240
+21342106
+22766ab67bc3cbe4563a9eca6f0a785f
+
++2348079522496
+27165475
+daa4e0c3a70913580ec7ea486884ce2e
+
+
 
 "When you check your Bitclub rewards after a bull run"
 (Image: Guy smiling at a skyrocketing graph, with a logo on his shirt clearly saying "BITCLUBER")
