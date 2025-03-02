@@ -6,9 +6,9 @@ from telethon.errors import FloodWaitError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 22680702
-API_HASH = '6112b5c7aded897b32d5477a1c228cc3'
-PHONE = "+2347033770119"
+API_ID = 14458814
+API_HASH = 'b1e1a2ffd6000df2ea7b40517523bbbb'
+PHONE = "+2349132953437"
 
 # Persistent session
 SESSION_NAME = "new_session_11"  # Change this to a fixed session name
@@ -49,6 +49,6 @@ def add_members_to_group(group_username):
 
 # Run the script
 if __name__ == "__main__":
-    group_username = "@BitclubsChannell"  # Replace with your group username
+    group_username = "@BitclubChatGroup"  # Replace with your group username
     add_members_to_group(group_username)
 

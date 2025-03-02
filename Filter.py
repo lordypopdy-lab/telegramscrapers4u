@@ -30,7 +30,7 @@
 # #Subscribe for more Free Telegram Script
 # def filterall():
 #     def main():
-#         with open('membersNew.csv', 'r', encoding='UTF-8') as readFile:
+#         with open('teammember.csv', 'r', encoding='UTF-8') as readFile:
 
 #             reader = csv.reader(readFile)
 
@@ -56,7 +56,7 @@
 
 #         writer.writerows(lines)
 
-#     myfile = "membersNew.csv"
+#     myfile = "teammember.csv"
 # #Coded with Solved4You 
 # #Subscribe for more Free Telegram Script
 #     ## If file exists, delete it ##
@@ -68,7 +68,7 @@
 #     with open("Final.csv", "r", encoding='UTF-8') as source:
 #         rdr = csv.reader(source)
 
-#         with open("membersNew.csv", "w", encoding='UTF-8') as f:
+#         with open("teammember.csv", "w", encoding='UTF-8') as f:
 #             writer = csv.writer(f, delimiter=",", lineterminator="\n")
 #             writer.writerow(['sr. no.', 'username', 'user id', 'name', 'Status'])
 #             i = 0
@@ -88,7 +88,7 @@
 #         os.remove(myfile)
 #     else:  ## Show an error ##
 #         print("Error: %s file not found" % myfile)
-#     print("Successfully Filtered And Saved In membersNew.csv")
+#     print("Successfully Filtered And Saved In teammember.csv")
 #     input('Please ENTER to exit..')
 
 # filterall()
@@ -105,9 +105,9 @@ SLEEP_TIME_1 = 10
 SLEEP_TIME_2 = 3
 
 def filter_csv():
-    input_file = "membersNew.csv"
+    input_file = "teammember.csv"
     output_file = "Final.csv"
-    final_filtered_file = "membersNew.csv"
+    final_filtered_file = "teammember.csv"
     
     # Read and filter data
     filtered_data = []
@@ -124,7 +124,7 @@ def filter_csv():
         writer = csv.writer(write_file)
         writer.writerows(filtered_data)
     
-    # Write to membersNew.csv with new headers
+    # Write to teammember.csv with new headers
     with open(final_filtered_file, 'w', encoding='UTF-8', newline='') as write_file:
         writer = csv.writer(write_file)
         writer.writerow(['sr. no.', 'username', 'user id', 'name', 'Status'])
@@ -139,7 +139,7 @@ def filter_csv():
     if os.path.exists(output_file):
         os.remove(output_file)
     
-    print("Successfully filtered and saved in membersNew.csv")
+    print("Successfully filtered and saved in teammember.csv")
     input("Press ENTER to exit...")
 
 filter_csv()
