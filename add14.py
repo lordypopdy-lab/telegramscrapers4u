@@ -8,7 +8,7 @@ from telethon.tl.functions.channels import InviteToChannelRequest
 # Replace these with your actual API credentials
 API_ID = 27784011
 API_HASH = 'b8929d1941d3dd8217e64e310bacdcb0'
-PHONE = +2347082082218
+PHONE = "+2347082082218"
 
 # Persistent session
 SESSION_NAME = "new_session_14"  # Change this to a fixed session name
@@ -51,3 +51,6 @@ def add_members_to_group(group_username):
 if __name__ == "__main__":
     group_username = "@BitclubChatGroup"  # Replace with your group username
     add_members_to_group(group_username)
+
+
+    
