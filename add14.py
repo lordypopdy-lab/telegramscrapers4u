@@ -49,7 +49,7 @@ def add_members_to_group(group_username):
 
 # Run the script
 if __name__ == "__main__":
-    group_username = "@BitclubChat2"  # Replace with your group username
+    group_username = "@BitclubChatGroup"  # Replace with your group username
     add_members_to_group(group_username)
 
 
