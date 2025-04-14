@@ -1,10 +1,10 @@
 from telethon import TelegramClient, events
 import re
 
-api_id = 25938607
-api_hash = 'd122ec7a5cf39942e27c4adcb5b6b192'
+api_id = 21342106
+api_hash = '22766ab67bc3cbe4563a9eca6f0a785f'
 
-client = TelegramClient('new_session_6', api_id, api_hash)
+client = TelegramClient('new_session_16', api_id, api_hash)
 
 @client.on(events.NewMessage)
 async def handler(event):
