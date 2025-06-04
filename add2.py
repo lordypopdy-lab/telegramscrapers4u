@@ -5,7 +5,7 @@ from telethon.sync import TelegramClient
 from telethon.errors import FloodWaitError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 
-# Replace these with your actual API credentials
+# Replace these with your actual API credentials----
 API_ID = 24595780
 API_HASH = 'c3b7a079f6c259d5a4aaa37e573b050e'
 PHONE = "+2349014653401"
