@@ -8,7 +8,7 @@ from telethon.tl.functions.channels import InviteToChannelRequest
 # Replace these with your actual API credentials
 API_ID = 20834141
 API_HASH = '867902c3c604c0dc88b596c3a7540773'
-PHONE = "+2347083639401"
+PHONE = "+2347083"
 
 # Persistent session
 SESSION_NAME = "new_session_1"  # Change this to a fixed session name
