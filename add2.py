@@ -5,10 +5,10 @@ from telethon.sync import TelegramClient
 from telethon.errors import FloodWaitError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 
-# Replace these with your actual API credentials
-API_ID = 24018383
-API_HASH = '3f16750c28790ba375d5b712deb083d9'
-PHONE = "+2349020552416"
+# Replace these with your actual API credentials----
+API_ID = 24595780
+API_HASH = 'c3b7a079f6c259d5a4aaa37e573b050e'
+PHONE = "+2349014653401"
 
 # Persistent session
 SESSION_NAME = "new_session_2"  # Change this to a fixed session name

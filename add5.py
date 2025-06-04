@@ -6,12 +6,12 @@ from telethon.errors import FloodWaitError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 23941921
-API_HASH = '6346ecdfde8c94db1ea3d53898b17364'
-PHONE = "+2348067290703"  # Ensure phone number is in string format
+API_ID = 22284358
+API_HASH = '84b0566e5bc4162957192e013a71ffcf'
+PHONE = "+2348123386848"  # Ensure phone number is in string format
 
 # Persistent session
-SESSION_NAME = "session_new"  # Change this to a fixed session name
+SESSION_NAME = "new_session_5"  # Change this to a fixed session name
 
 def add_members_to_group(group_username):
     with TelegramClient(SESSION_NAME, API_ID, API_HASH) as client:
