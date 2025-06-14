@@ -105,9 +105,9 @@ SLEEP_TIME_1 = 10
 SLEEP_TIME_2 = 3
 
 def filter_csv():
-    input_file = "teammember.csv"
+    input_file = "XM.csv"
     output_file = "Final.csv"
-    final_filtered_file = "teammember.csv"
+    final_filtered_file = "XM.csv"
     
     # Read and filter data
     filtered_data = []
