@@ -6,9 +6,9 @@ from telethon.errors import FloodWaitError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 28597009
-API_HASH = '438333bcae140140e10988fd9a63667b'
-PHONE = "+2349049696526"
+API_ID = 24111187
+API_HASH = '886552a7c5b131049c6cab332ab120db'
+PHONE = "+2348127042272"
 # Function to add members to a group
 
 # Persistent session

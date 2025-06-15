@@ -6,9 +6,9 @@ from telethon.errors import FloodWaitError, UserPrivacyRestrictedError
 from telethon.tl.functions.channels import InviteToChannelRequest
 
 # Replace these with your actual API credentials
-API_ID = 25990443
-API_HASH = '049cc09061b66b822e41a8dabfeba91c'
-PHONE = +2348020524205
+API_ID = 20441671
+API_HASH = '06a54c63dbcdb335e41e184e8d58e6be'
+PHONE = +2349024643533
 
 # Persistent session
 SESSION_NAME = "new_session_15"  # Change this to a fixed session name
